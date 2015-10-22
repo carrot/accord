@@ -97,7 +97,7 @@ class Adapter
     opts = _.clone(opts, true)
     (new File(file))
       .read(encoding: 'utf8')
-      .then _.partialRight(@render, _.extend({ filename: file }, opts)).bind(@)
+      .then _.partialRight(@render, _.defaults({ filename: file }, opts)).bind(@)
 
   ###*
    * Compile a string to a function
